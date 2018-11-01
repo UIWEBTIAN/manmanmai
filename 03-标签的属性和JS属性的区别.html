@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="" name="" value="输入的值" data-id="1">
+    <button type="button" class="btn">获取input的值</button>
+    <script>
+    var btn = document.querySelector('.btn');
+    btn.addEventListener('click', function() {
+        var input = document.querySelector('input');
+        console.dir(input);
+        // 获取JS对象里的属性的值 这个值在标签中就看不到的
+        console.log(input.value);//不可见
+        // 获取标签中的属性的的值(元素对象里面的attribute对象里面的属性的值) 这个attribute标签中能够看得见
+        console.log(input.getAttribute('value'));
+        console.log(input.dataset['id'] = 2);
+        console.log(input.dataset['id']);
+        console.log(input.attributes.value);//可见的
+        input.setAttribute('value', input.value)
+    })
+    </script>
+</body>
+
+</html>
